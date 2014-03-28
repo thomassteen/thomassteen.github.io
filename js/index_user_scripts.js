@@ -21,6 +21,10 @@
         });
         
         
+        
+        
+        
+        
         $("#btn_settings").click(function(evt)
         {
          /* Other possible functions are: 
@@ -42,6 +46,10 @@
           See js/sidebar.js for the full sidebar API */
         
          uib_sb.toggle_sidebar($(".uib_w_2"));  
+        });
+        $("#btn_upload_to_silvia").click(function(evt)
+        {
+            xively_upload_temp(); 
         });
 }
  $(document).ready(register_event_handlers);

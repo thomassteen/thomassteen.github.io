@@ -232,6 +232,7 @@ body:not(#afui) .upage-outer {
 }
 @media all {
   #afui .BackgroundColor > .content-area {
+    background-color: #ffffff;
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -419,10 +420,10 @@ body:not(#afui) .upage-outer {
     width: 100%;
   }
   #afui .widthsettings > .narrow-control {
-    width: 110px;
+    width: 97px;
     text-align: left;
-    padding-left: 10px 0px 0px 0px 0px 0px 0px;
-    padding-right: 10px 0px 0px 0px 0px 0px 0px;
+    padding-left: 10px 0px 0px 0px 0px 0px 0px 0px 0px 0px 0px 0px 0px;
+    padding-right: 10px 0px 0px 0px 0px 0px 0px 0px 0px 0px 0px 0px 0px;
   }
 }
 @media all {
@@ -574,5 +575,14 @@ body:not(#afui) .upage-outer {
   }
   .urow.cright > .col-0_12-12 {
     padding-left: 0px !important;
+  }
+}
+[data-uib="media/iframe"] > iframe {
+  width: 100%;
+  height: 100%;
+}
+@media all {
+  #afui .iframe-size {
+    width: 100%;
   }
 }
