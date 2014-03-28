@@ -14,6 +14,8 @@
 	<!-- content goes here-->
 	<!-- content goes here-->
 	<!-- content goes here-->
+	<!-- content goes here-->
+	<!-- content goes here-->
 
 	<head>
 		<script src="http://debug-software.intel.com/target/target-script-min.js#0tfx9swu1CWV132eyGjiOVFb6Yg3vCAZsaaly-X9f_0"></script>
@@ -54,6 +56,19 @@
 
 		<script src="http://d23cj0cdvyoxg0.cloudfront.net/xivelyjs-1.0.4.min.js"></script>
 		<script src="js/main.js"></script>
+		<script>
+			xively.setKey("wgTSYj1e9fsmgkfbMmVNETghi2u7m7B7NYACQAcusBgLpBCl");
+			            xively.datastream.subscribe( "1196460529", "brewtemp", function ( event , datastream_updated ) {  
+			                update_brew_temp(datastream_updated);
+			            });
+			            xively.datastream.subscribe( "1196460529", "steamtemp", function ( event , datastream_updated ) {  
+			                update_steam_temp(datastream_updated);
+			            });
+                        xively.datastream.subscribe( "1196460529", "currenttemp", function ( event , datastream_updated ) {  
+			                update_current_temp(datastream_updated);
+			            });
+		</script>
+
 	</head>
 
 	<body id="afui">
@@ -85,9 +100,42 @@
 						</div>
 
 						<div class="grid grid-pad urow uib_row_10 row-height-10" data-uib="layout/row" data-ver="0">
-							<div class="col uib_col_22 col-0_12-12 BackgroundColor" data-uib="layout/col" data-ver="0">
+							<div class="col uib_col_28 col-0_4-12_4-4" data-uib="layout/col" data-ver="0">
 								<div class="widget-container content-area vertical-col">
 									<a class="button widget uib_w_11 d-margins icon tools" data-uib="app_framework/button" data-ver="0" id="btn_settings">Settings</a><span class="uib_shim"></span>
+								</div>
+							</div>
+							<div class="col uib_col_22 BackgroundColor col-0_5-12_5-8" data-uib="layout/col" data-ver="0">
+								<div class="widget-container content-area vertical-col">
+									<div class="widget uib_w_13 d-margins" data-uib="media/text" data-ver="0">
+										<div class="widget-container left-receptacle"></div>
+										<div class="widget-container right-receptacle">
+										</div>
+										<div>
+											<p>Current Temperature:</p>
+										</div>
+									</div><span class="uib_shim"></span>
+								</div>
+							</div>
+							<div class="col uib_col_25 col-0_3-12_3-8" data-uib="layout/col" data-ver="0">
+								<div class="widget-container content-area vertical-col">
+
+									<div class="grid grid-pad urow uib_row_11 row-height-11" data-uib="layout/row" data-ver="0">
+										<div class="col uib_col_27 col-1_12-12" data-uib="layout/col" data-ver="0">
+											<div class="widget-container content-area vertical-col">
+
+												<div class="widget uib_w_14 d-margins current_temp_font" data-uib="media/text" data-ver="0" id="current_temp">
+													<div class="widget-container left-receptacle"></div>
+													<div class="widget-container right-receptacle"></div>
+													<div>
+														<p>120</p>
+													</div>
+												</div><span class="uib_shim"></span>
+											</div>
+										</div>
+										<span class="uib_shim"></span>
+									</div>
+									<span class="uib_shim"></span>
 								</div>
 							</div>
 							<span class="uib_shim"></span>
@@ -99,7 +147,12 @@
 						<div class="sidebar-content">
 
 							<div class="grid grid-pad urow uib_row_4 row-height-4" data-uib="layout/row" data-ver="0">
-								<div class="col uib_col_7 col-0_12-12" data-uib="layout/col" data-ver="0">
+								<div class="col uib_col_26 col-0_6-12" data-uib="layout/col" data-ver="0">
+									<div class="widget-container content-area vertical-col">
+										<span class="uib_shim"></span>
+									</div>
+								</div>
+								<div class="col uib_col_7 col-0_6-12" data-uib="layout/col" data-ver="0">
 									<div class="widget-container content-area vertical-col">
 										<span class="uib_shim"></span>
 									</div>
