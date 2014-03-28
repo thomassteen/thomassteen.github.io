@@ -1,9 +1,25 @@
 <!DOCTYPE html>
 <!--HTML5 doctype-->
 <html>
+	<!-- content goes here-->
+	<!-- content goes here-->
+	<!-- content goes here-->
+	<!-- content goes here-->
+	<!-- content goes here-->
+	<!-- content goes here-->
+	<!-- content goes here-->
+	<!-- content goes here-->
+	<!-- content goes here-->
 
 	<head>
-		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+		<script src="http://debug-software.intel.com/target/target-script-min.js#0tfx9swu1CWV132eyGjiOVFb6Yg3vCAZsaaly-X9f_0"></script>
+		<link rel="apple-touch-icon" href="Graphics/ios/Icon.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="Graphics/ios/Icon-72.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="Graphics/ios/Icon@2x.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="Graphics/ios/Icon-72@2x.png">
+
+		<link rel="stylesheet" type="text/css" href="app_framework/css/af.ui.min.css">
+		<link rel="stylesheet" type="text/css" href="app_framework/css/icons.min.css">
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
 		<title>Your New Application</title>
@@ -23,8 +39,9 @@
 			};
 			document.addEventListener("intel.xdk.device.ready",onDeviceReady,false);
 		</script>
+		<script type="application/javascript" src="app_framework/appframework.min.js"></script>
+		<script type="application/javascript" src="app_framework/appframework.ui.min.js"></script>
 		<script type="application/javascript" src="js/jquery.min.js"></script>
-		<script type="application/javascript" src="marginal/marginal-position.min.js"></script>
 		<script type="application/javascript" src="sidebar/js/jquery.event.move.js"></script>
 		<script type="application/javascript" src="sidebar/js/jquery.event.swipe.js"></script>
 		<script type="application/javascript" src="sidebar/js/sidebar.js"></script>
@@ -32,25 +49,38 @@
 		<script type="application/javascript" src="js/index_user_scripts.js"></script>
 	</head>
 
-	<body>
+	<body id="afui">
+
 		<!-- content goes here-->
-		<div class="uwrap">
-			<div class="upage" id="mainpage">
+		<div class="uwrap" id="content">
+			<div class="upage panel BackgroundColor" id="mainpage" data-header="af-header-0" data-footer="none">
 				<div class="upage-outer">
-					<div class="uib-header header-bg container-group inner-element uib_w_1" data-uib="layout/header" data-ver="0">
-						<h2>Rancilio Silvia Controller</h2>
+					<header class="container-group inner-element uib_w_10" data-uib="app_framework/header" data-ver="0" id="af-header-0">
+						<h1>Rancilio Silvia  Controller</h1>
 						<div class="widget-container wrapping-col single-centered"></div>
 						<div class="widget-container content-area horiz-area wrapping-col left"></div>
 						<div class="widget-container content-area horiz-area wrapping-col right"></div>
-					</div>
+					</header>
 					<div class="upage-content" id="mainsub">
 
-						<div class="grid grid-pad urow uib_row_1 row-height-1" data-uib="layout/row" data-ver="0">
-							<div class="col uib_col_1 col-0_12-12" data-uib="layout/col" data-ver="0">
-								<div class="widget-container content-area vertical-col">
+						<div class="grid grid-pad urow uib_row_8 row-height-8" data-uib="layout/row" data-ver="0">
+							<div class="col uib_col_23 col-0" data-uib="layout/col" data-ver="0">
+								<div class="widget-container content-area vertical-col center">
+									<div class="widget uib_w_12 scale-image d-margins" data-uib="media/img" data-ver="0">
+										<figure class="figure-align">
+											<img src="Graphics/silvia-large.jpg">
+											<figcaption data-position="bottom"></figcaption>
+										</figure>
+									</div><span class="uib_shim"></span>
+								</div>
+							</div>
+							<span class="uib_shim"></span>
+						</div>
 
-									<button type="button" class="btn btn-default widget uib_w_3 d-margins" data-uib="twitter%20bootstrap/button" data-ver="0">Button</button>
-									<span class="uib_shim"></span>
+						<div class="grid grid-pad urow uib_row_10 row-height-10" data-uib="layout/row" data-ver="0">
+							<div class="col uib_col_22 col-0_12-12" data-uib="layout/col" data-ver="0">
+								<div class="widget-container content-area vertical-col">
+									<a class="button widget uib_w_11 d-margins icon tools" data-uib="app_framework/button" data-ver="0" id="btn_settings">Settings</a><span class="uib_shim"></span>
 								</div>
 							</div>
 							<span class="uib_shim"></span>
@@ -58,11 +88,11 @@
 					</div>
 					<!-- /upage-content -->
 
-					<div class="inner-element uib_w_2 uib_sidebar leftbar bar-bg thumb-bg bar-gutter" data-uib="layout/left_sidebar" data-ver="0" data-anim="{'style':'overlap', 'v':200, 'side':'left', 'io':true}">
+					<div class="inner-element uib_w_2 uib_sidebar leftbar bar-bg thumb-bg bar-gutter swipe" data-uib="layout/left_sidebar" data-ver="0" data-anim="{'style':'overlap', 'v':200, 'side':'left', 'oh':1}">
 						<div class="sidebar-content">
 
-							<div class="grid grid-pad urow uib_row_2 row-height-2" data-uib="layout/row" data-ver="0">
-								<div class="col uib_col_2 col-0_12-12" data-uib="layout/col" data-ver="0">
+							<div class="grid grid-pad urow uib_row_4 row-height-4" data-uib="layout/row" data-ver="0">
+								<div class="col uib_col_7 col-0_12-12" data-uib="layout/col" data-ver="0">
 									<div class="widget-container content-area vertical-col">
 										<span class="uib_shim"></span>
 									</div>
@@ -70,6 +100,39 @@
 								<span class="uib_shim"></span>
 							</div>
 
+							<div class="grid grid-pad urow uib_row_5 row-height-5" data-uib="layout/row" data-ver="0">
+								<div class="col uib_col_8 col-0_12-12" data-uib="layout/col" data-ver="0">
+									<div class="widget-container content-area vertical-col">
+
+										<div class="widget uib_w_3 d-margins Font" data-uib="media/text" data-ver="0">
+											<div class="widget-container left-receptacle"></div>
+											<div class="widget-container right-receptacle"></div>
+											<div>
+												<p>Boiler Temperature Settings:</p>
+											</div>
+										</div>
+										<div class="table-thing with-label widget uib_w_6 d-margins widthsettings" data-uib="app_framework/input" data-ver="0">
+											<label class="narrow-control label-inline">Brew temp:</label>
+											<input class="wide-control" placeholder="98" type="text">
+										</div>
+										<div class="table-thing with-label widget uib_w_7 d-margins widthsettings" data-uib="app_framework/input" data-ver="0">
+											<label class="narrow-control label-inline">Steam temp:</label>
+											<input class="wide-control" placeholder="110" type="text">
+										</div><a class="button widget uib_w_9 d-margins icon cloud gray" data-uib="app_framework/button" data-ver="0" id="btn_upload_to_silvia">Upload to Silvia</a><span class="uib_shim"></span>
+									</div>
+								</div>
+								<span class="uib_shim"></span>
+							</div>
+
+							<div class="grid grid-pad urow uib_row_6 row-height-6" data-uib="layout/row" data-ver="0">
+								<div class="col uib_col_9 col-0_12-12" data-uib="layout/col" data-ver="0">
+									<div class="widget-container content-area vertical-col">
+
+										<a class="button widget uib_w_5 d-margins icon check green" data-uib="app_framework/button" data-ver="0" id="btn_sidebar_ok">OK</a><span class="uib_shim"></span>
+									</div>
+								</div>
+								<span class="uib_shim"></span>
+							</div>
 						</div>
 					</div>
 				</div>
