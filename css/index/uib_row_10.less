@@ -2,28 +2,6 @@
 
 .uib_row_10 > .col { padding-left:(@gutter_r1 / 2); padding-right:(@gutter_r1 / 2); }
 
-@media all and (min-width: @wp_1) {
-  .uib_col_28     { width:34%;}
-  .urow.cright       > .uib_col_28     { padding-left: 0px !important;}
-  .urow:not(.cright) > .uib_col_28     { clear:left; padding-left: 0px !important; }
-  .uib_col_22     { width:41%;}
-  .uib_col_25     { width:25%;}
-  .urow:not(.cright) > .uib_col_25     { padding-right:0px !important;}
-  .urow.cright       > .uib_col_25     { clear:right; padding-right:0px !important; }
-}
-
-@media all and (min-width: @wp_2) and (max-width: @wp_1){
-  .uib_col_28.uib_col_28     { width: auto; float: none !important;  clear:both; padding-left:0px !important; padding-right:0px !important; }
-  .uib_col_22     { width:62%;}
-  .urow.cright       > .uib_col_22     { padding-left: 0px !important;}
-  .urow:not(.cright) > .uib_col_22     { clear:left; padding-left: 0px !important; }
-  .uib_col_25     { width:37%;}
-  .urow:not(.cright) > .uib_col_25     { padding-right:0px !important;}
-  .urow.cright       > .uib_col_25     { clear:right; padding-right:0px !important; }
-}
-
-@media all and (max-width: @wp_2) {
-  .col-0_4-12_4-4     { width: auto; float: none !important;  clear:both; padding-left:0px !important; padding-right:0px !important; }
-  .col-0_5-12_5-8     { width: auto; float: none !important;  clear:both; padding-left:0px !important; padding-right:0px !important; }
-  .col-0_3-12_3-8     { width: auto; float: none !important;  clear:both; padding-left:0px !important; padding-right:0px !important; }
+@media all{
+  .col-0     { width: auto; float: none !important;  clear:both; padding-left:0px !important; padding-right:0px !important; }
 }

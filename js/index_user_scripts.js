@@ -51,6 +51,7 @@
         {
             xively_upload_temp(); 
         });
+   
 }
  $(document).ready(register_event_handlers);
 })();

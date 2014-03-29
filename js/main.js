@@ -30,8 +30,11 @@ function update_steam_temp(data)
     
 function update_current_temp(data)
 {
-    window.alert(data.current_value);
-    document.getElementById("current_temp").textContent = data["current_value"];
-    document.getElementById("current_temp").fontSize = "40px";
+    //window.alert(data.current_value);
+    var gauge = Gauges.getById('uib-justgage-0');
+    int temp = Integer.parseInt(data.current_value);
+    window.alert(temp);
+   gauge.refresh(temp); //= "20";// temp.stringToNumber;
+    
 }
     

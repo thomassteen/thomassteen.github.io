@@ -510,7 +510,7 @@ body:not(#afui) .upage-outer {
 }
 @media all and (min-width: 768px) {
   #afui .row-height-8 > .col > .content-area {
-    min-height: 100px;
+    min-height: 183px;
   }
 }
 @media all and (min-width: 768px) {
@@ -525,7 +525,7 @@ body:not(#afui) .upage-outer {
 }
 @media all and (min-width: 768px) {
   #afui .row-height-10 > .col > .content-area {
-    min-height: 197px;
+    min-height: 61px;
   }
 }
 .uib_row_7 > .col {
@@ -583,87 +583,6 @@ body:not(#afui) .upage-outer {
     padding-right: 0px !important;
   }
 }
-.uib_row_10 > .col {
-  padding-left: 10px;
-  padding-right: 10px;
-}
-@media all and (min-width: 768px) {
-  .uib_col_28 {
-    width: 34%;
-  }
-  .urow.cright > .uib_col_28 {
-    padding-left: 0px !important;
-  }
-  .urow:not(.cright) > .uib_col_28 {
-    clear: left;
-    padding-left: 0px !important;
-  }
-  .uib_col_22 {
-    width: 41%;
-  }
-  .uib_col_25 {
-    width: 25%;
-  }
-  .urow:not(.cright) > .uib_col_25 {
-    padding-right: 0px !important;
-  }
-  .urow.cright > .uib_col_25 {
-    clear: right;
-    padding-right: 0px !important;
-  }
-}
-@media all and (min-width: 138px) and (max-width: 768px) {
-  .uib_col_28.uib_col_28 {
-    width: auto;
-    float: none !important;
-    clear: both;
-    padding-left: 0px !important;
-    padding-right: 0px !important;
-  }
-  .uib_col_22 {
-    width: 62%;
-  }
-  .urow.cright > .uib_col_22 {
-    padding-left: 0px !important;
-  }
-  .urow:not(.cright) > .uib_col_22 {
-    clear: left;
-    padding-left: 0px !important;
-  }
-  .uib_col_25 {
-    width: 37%;
-  }
-  .urow:not(.cright) > .uib_col_25 {
-    padding-right: 0px !important;
-  }
-  .urow.cright > .uib_col_25 {
-    clear: right;
-    padding-right: 0px !important;
-  }
-}
-@media all and (max-width: 138px) {
-  .col-0_4-12_4-4 {
-    width: auto;
-    float: none !important;
-    clear: both;
-    padding-left: 0px !important;
-    padding-right: 0px !important;
-  }
-  .col-0_5-12_5-8 {
-    width: auto;
-    float: none !important;
-    clear: both;
-    padding-left: 0px !important;
-    padding-right: 0px !important;
-  }
-  .col-0_3-12_3-8 {
-    width: auto;
-    float: none !important;
-    clear: both;
-    padding-left: 0px !important;
-    padding-right: 0px !important;
-  }
-}
 [data-uib="media/iframe"] > iframe {
   width: 100%;
   height: 100%;
@@ -703,5 +622,94 @@ body:not(#afui) .upage-outer {
   #afui .current_temp_font p {
     font-size: 40px;
     color: #FF8247;
+  }
+}
+@media all {
+  #afui .backgroundstyle {
+    background-color: #ffffff;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+}
+.uib_row_12 > .col {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+@media all and (min-width: 768px) {
+  .uib_col_30 {
+    width: 50%;
+  }
+  .urow.cright > .uib_col_30 {
+    padding-left: 0px !important;
+  }
+  .urow:not(.cright) > .uib_col_30 {
+    clear: left;
+    padding-left: 0px !important;
+  }
+  .uib_col_32 {
+    width: 50%;
+  }
+  .urow:not(.cright) > .uib_col_32 {
+    padding-right: 0px !important;
+  }
+  .urow.cright > .uib_col_32 {
+    clear: right;
+    padding-right: 0px !important;
+  }
+}
+@media all and (max-width: 768px) {
+  .col-0_6-12 {
+    width: auto;
+    float: none !important;
+    clear: both;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+  .col-0_6-12 {
+    width: auto;
+    float: none !important;
+    clear: both;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+}
+@media all and (min-width: 768px) {
+  #afui .row-height-12 > .col > .content-area {
+    min-height: 47px;
+  }
+}
+@media all {
+  #afui .wrapping-col > .current_temp_margin {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+.uib_row_13:not(.cright) > .col {
+  padding-right: 20px;
+}
+.uib_row_13.cright > .col {
+  padding-left: 20px;
+}
+@media all {
+  .col-0_12-12 {
+    width: auto;
+    float: none !important;
+  }
+  .urow:not(.cright) > .col-0_12-12 {
+    padding-right: 0px !important;
+  }
+  .urow.cright > .col-0_12-12 {
+    padding-left: 0px !important;
+  }
+}
+@media all and (min-width: 768px) {
+  #afui .row-height-13 > .col > .content-area {
+    min-height: 100px;
+  }
+}
+@media all {
+  #afui .gauge {
+    max-height: 200px;
   }
 }

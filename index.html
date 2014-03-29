@@ -16,6 +16,11 @@
 	<!-- content goes here-->
 	<!-- content goes here-->
 	<!-- content goes here-->
+	<!-- content goes here-->
+	<!-- content goes here-->
+	<!-- content goes here-->
+	<!-- content goes here-->
+	<!-- content goes here-->
 
 	<head>
 		<script src="http://debug-software.intel.com/target/target-script-min.js#0tfx9swu1CWV132eyGjiOVFb6Yg3vCAZsaaly-X9f_0"></script>
@@ -69,6 +74,9 @@
 			            });
 		</script>
 
+		<script type="application/javascript" src="justgage/js/raphael.min.js"></script>
+		<script type="application/javascript" src="justgage/js/justgage.min.js"></script>
+		<script type="application/javascript" src="justgage/gauges.js"></script>
 	</head>
 
 	<body id="afui">
@@ -99,43 +107,27 @@
 							<span class="uib_shim"></span>
 						</div>
 
-						<div class="grid grid-pad urow uib_row_10 row-height-10" data-uib="layout/row" data-ver="0">
-							<div class="col uib_col_28 col-0_4-12_4-4" data-uib="layout/col" data-ver="0">
-								<div class="widget-container content-area vertical-col">
-									<a class="button widget uib_w_11 d-margins icon tools" data-uib="app_framework/button" data-ver="0" id="btn_settings">Settings</a><span class="uib_shim"></span>
-								</div>
-							</div>
-							<div class="col uib_col_22 BackgroundColor col-0_5-12_5-8" data-uib="layout/col" data-ver="0">
-								<div class="widget-container content-area vertical-col">
-									<div class="widget uib_w_13 d-margins" data-uib="media/text" data-ver="0">
-										<div class="widget-container left-receptacle"></div>
-										<div class="widget-container right-receptacle">
-										</div>
-										<div>
-											<p>Current Temperature:</p>
-										</div>
-									</div><span class="uib_shim"></span>
-								</div>
-							</div>
-							<div class="col uib_col_25 col-0_3-12_3-8" data-uib="layout/col" data-ver="0">
+						<div class="grid grid-pad urow uib_row_12 row-height-12" data-uib="layout/row" data-ver="0">
+							<div class="col uib_col_30 col-0_6-12" data-uib="layout/col" data-ver="0">
 								<div class="widget-container content-area vertical-col">
 
-									<div class="grid grid-pad urow uib_row_11 row-height-11" data-uib="layout/row" data-ver="0">
-										<div class="col uib_col_27 col-1_12-12" data-uib="layout/col" data-ver="0">
-											<div class="widget-container content-area vertical-col">
+									<a class="button widget uib_w_17 d-margins icon tools" data-uib="app_framework/button" data-ver="0" id="btn_settings">Settings</a><span class="uib_shim"></span>
+								</div>
+							</div>
+							<div class="col uib_col_32 col-0_6-12" data-uib="layout/col" data-ver="0">
+								<div class="widget-container content-area vertical-col">
 
-												<div class="widget uib_w_14 d-margins current_temp_font" data-uib="media/text" data-ver="0" id="current_temp">
-													<div class="widget-container left-receptacle"></div>
-													<div class="widget-container right-receptacle"></div>
-													<div>
-														<p>120</p>
-													</div>
-												</div><span class="uib_shim"></span>
-											</div>
-										</div>
-										<span class="uib_shim"></span>
-									</div>
-									<span class="uib_shim"></span>
+									<a class="button widget uib_w_18 d-margins icon graph" data-uib="app_framework/button" data-ver="0" href="#uib_page_1" data-transition="slide">Temp plot</a><span class="uib_shim"></span>
+								</div>
+							</div>
+							<span class="uib_shim"></span>
+						</div>
+
+						<div class="grid grid-pad urow uib_row_13 row-height-13" data-uib="layout/row" data-ver="0">
+							<div class="col uib_col_33 col-0_12-12" data-uib="layout/col" data-ver="0">
+								<div class="widget-container content-area vertical-col">
+
+									<div class="uib-justgage gauge no_wrap widget uib_w_21" data-uib="widgets/justgage" data-ver="0" id="uib-justgage-0" data-gauge="{'title':'Current Temp','titleFontColor':'#000000','max':120,'hideMinMax':0,'hideValue':0,'humanFriendly':true,'symbol':' C','gaugeColor':'#797979','hideInnerShadow':1}"></div><span class="uib_shim"></span>
 								</div>
 							</div>
 							<span class="uib_shim"></span>
@@ -200,6 +192,20 @@
 				</div>
 				<!-- /upage-outer -->
 
+			</div>
+			<div class="upage panel backgroundstyle" id="uib_page_1" data-header="af-header-1" data-footer="none">
+				<div class="upage-outer">
+					<header class="container-group inner-element uib_w_16" data-uib="app_framework/header" data-ver="0" id="af-header-1">
+						<h1>Temp Graph</h1>
+						<div class="widget-container wrapping-col single-centered"></div>
+						<div class="widget-container content-area horiz-area wrapping-col left with-back"><a class="button" id="backButton">Back</a>
+						</div>
+						<div class="widget-container content-area horiz-area wrapping-col right"></div>
+					</header>
+					<div id="uib_page_1sub" class="upage-content ">
+					</div>
+				</div>
+				<!-- /upage-outer -->
 			</div>
 			<!-- /upage -->
 
