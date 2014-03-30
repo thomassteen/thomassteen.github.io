@@ -72,6 +72,8 @@
                         xively.datastream.subscribe( "1196460529", "currenttemp", function ( event , datastream_updated ) {  
 			                update_current_temp(datastream_updated);
 			            });
+                //read current temp initially
+                        xively.datastream.get( "1196460529", "currenttemp", function(data){update_current_temp(data)});
 		</script>
 
 		<script type="application/javascript" src="justgage/js/raphael.min.js"></script>

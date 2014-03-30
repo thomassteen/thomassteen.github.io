@@ -17,12 +17,7 @@
             uib_sb.close_all_sidebars()
           See js/sidebar.js for the full sidebar API */
         
-         uib_sb.toggle_sidebar($(".uib_w_2"));  
         });
-        
-        
-        
-        
         
         
         $("#btn_settings").click(function(evt)
@@ -33,7 +28,12 @@
            uib_sb.toggle_sidebar($sb)
             uib_sb.close_all_sidebars()
           See js/sidebar.js for the full sidebar API */
+            xively.setKey("wgTSYj1e9fsmgkfbMmVNETghi2u7m7B7NYACQAcusBgLpBCl");
+            xively.datastream.get( "1196460529", "brewtemp", function(data){update_brew_temp(data)});
+            xively.datastream.get( "1196460529", "steamtemp", function(data){update_steam_temp(data)});
+            //xively.datastream.get( "1196460529", "currenttemp", function(data){update_current_temp(data)}); 
         
+            
          uib_sb.toggle_sidebar($(".uib_w_2"));  
         });
         $("#btn_sidebar_ok").click(function(evt)

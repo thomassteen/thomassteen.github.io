@@ -34,7 +34,7 @@ function update_current_temp(data)
     var gauge = Gauges.getById('uib-justgage-0');
     var temp = parseInt(data.current_value);
     //window.alert(temp);
-   gauge.refresh(temp); //= "20";// temp.stringToNumber;
+   gauge.refresh(temp); 
     
 }
     
