@@ -676,7 +676,7 @@ body:not(#afui) .upage-outer {
 }
 @media all and (min-width: 768px) {
   #afui .row-height-12 > .col > .content-area {
-    min-height: 47px;
+    min-height: 51px;
   }
 }
 @media all {
@@ -705,11 +705,19 @@ body:not(#afui) .upage-outer {
 }
 @media all and (min-width: 768px) {
   #afui .row-height-13 > .col > .content-area {
-    min-height: 100px;
+    min-height: 49px;
   }
 }
 @media all {
   #afui .gauge {
     max-height: 200px;
+  }
+}
+@media all {
+  #afui .sidebar-bg {
+    background-color: rgba(168, 214, 255, 0.88);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
   }
 }
