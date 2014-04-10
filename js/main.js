@@ -37,4 +37,35 @@ function update_current_temp(data)
    gauge.refresh(temp); 
     
 }
+
+function update_boiler_state(data)
+{
+    var myswitch = document.getElementById("af-flipswitch-0");
+    //window.alert("jej");
+    if (data.current_value == "0")
+    {
+        myswitch.checked = false;
+        myswitch.refresh;
+    //    window.alert(data.current_value);
+    }
+    if (data.current_value == "1")
+    {
+        myswitch.checked = true;
+        myswitch.refresh;
+    //    window.alert(data.current_value);
+    }
+}
     
+function set_boiler_state()
+{
+    //window.alert("set boiler");
+    xively.setKey('wgTSYj1e9fsmgkfbMmVNETghi2u7m7B7NYACQAcusBgLpBCl');
+    var myswitch = document.getElementById("af-flipswitch-0");
+    if (myswitch.checked){
+        xively.datastream.update ("1196460529", "boilerstate", {current_value: "1"}, callback ());
+    }
+    if (!myswitch.checked){
+        xively.datastream.update ("1196460529", "boilerstate", {current_value: "0"}, callback ());
+    }
+        
+}

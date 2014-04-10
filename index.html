@@ -6,26 +6,6 @@
 	<!-- content goes here-->
 	<!-- content goes here-->
 	<!-- content goes here-->
-	<!-- content goes here-->
-	<!-- content goes here-->
-	<!-- content goes here-->
-	<!-- content goes here-->
-	<!-- content goes here-->
-	<!-- content goes here-->
-	<!-- content goes here-->
-	<!-- content goes here-->
-	<!-- content goes here-->
-	<!-- content goes here-->
-	<!-- content goes here-->
-	<!-- content goes here-->
-	<!-- content goes here-->
-	<!-- content goes here-->
-	<!-- content goes here-->
-	<!-- content goes here-->
-	<!-- content goes here-->
-	<!-- content goes here-->
-	<!-- content goes here-->
-	<!-- content goes here-->
 
 	<head>
 		<script src="http://debug-software.intel.com/target/target-script-min.js#0tfx9swu1CWV132eyGjiOVFb6Yg3vCAZsaaly-X9f_0"></script>
@@ -79,6 +59,12 @@
 			            });
                 //read current temp initially
                         xively.datastream.get( "1196460529", "currenttemp", function(data){update_current_temp(data)});
+            
+            xively.datastream.subscribe( "1196460529", "boilerstate", function ( event , datastream_updated ) {  
+			                update_boiler_state(datastream_updated);
+			            });
+                //read boilerstate initially
+                        xively.datastream.get( "1196460529", "boilerstate", function(data){update_boiler_state(data)});
 		</script>
 
 		<script type="application/javascript" src="justgage/js/raphael.min.js"></script>
@@ -118,13 +104,22 @@
 							<div class="col uib_col_30 col-0_6-12" data-uib="layout/col" data-ver="0">
 								<div class="widget-container content-area vertical-col">
 
-									<a class="button widget uib_w_17 d-margins icon tools" data-uib="app_framework/button" data-ver="0" id="btn_settings">Settings</a><span class="uib_shim"></span>
+									<div class="table-thing with-label widget uib_w_23 d-margins togglewidth" data-uib="app_framework/flip_switch" data-ver="0">
+										<label class="narrow-control label-inline">Boiler On/Off</label>
+
+										<div class="wide-control">
+											<input type="checkbox" onclick="set_boiler_state()" class="toggle" id="af-flipswitch-0">
+											<label for="af-flipswitch-0" data-off="Off" data-on="On"><span></span>
+											</label>
+										</div>
+									</div><a class="button widget uib_w_17 d-margins icon tools" data-uib="app_framework/button" data-ver="0" id="btn_settings">Settings</a><span class="uib_shim"></span>
 								</div>
 							</div>
 							<div class="col uib_col_32 col-0_6-12" data-uib="layout/col" data-ver="0">
 								<div class="widget-container content-area vertical-col">
 
-									<a class="button widget uib_w_18 d-margins icon graph" data-uib="app_framework/button" data-ver="0" href="#uib_page_1" data-transition="slide">Temp plot</a><span class="uib_shim"></span>
+									<a class="button widget uib_w_18 d-margins icon graph" data-uib="app_framework/button" data-ver="0" href="#uib_page_1" data-transition="slide">Temp plot</a>
+									<span class="uib_shim"></span>
 								</div>
 							</div>
 							<span class="uib_shim"></span>
@@ -215,13 +210,6 @@
 							<div class="col uib_col_34 col-0_12-12" data-uib="layout/col" data-ver="0">
 								<div class="widget-container content-area vertical-col">
 
-									<div class="widget uib_w_22 d-margins" data-uib="media/img" data-ver="0">
-										<figure class="figure-align">
-											<img src="https://api.xively.com/v2/feeds/1196460529/datastreams/currenttemp.png?c=2188c5&amp;g=true&amp;t=" boiler="" temperature "&b="true&quot; ">
-
-											<figcaption data-position="bottom "></figcaption>
-										</figure>
-									</div>
 									<span class="uib_shim "></span>
 								</div>
 							</div>
@@ -236,4 +224,5 @@
 		</div>
 		<!-- /uwrap -->
 	</body>
+
 </html>

@@ -676,7 +676,7 @@ body:not(#afui) .upage-outer {
 }
 @media all and (min-width: 768px) {
   #afui .row-height-12 > .col > .content-area {
-    min-height: 51px;
+    min-height: 89px;
   }
 }
 @media all {
@@ -742,5 +742,16 @@ body:not(#afui) .upage-outer {
 @media all and (min-width: 768px) {
   #afui .row-height-14 > .col > .content-area {
     min-height: 206px;
+  }
+}
+#afui input.toggle + label {
+  left: 0;
+}
+@media all {
+  #afui .togglewidth > .narrow-control {
+    width: 190px;
+    text-align: left;
+    padding-left: 0px;
+    padding-right: 0px;
   }
 }
