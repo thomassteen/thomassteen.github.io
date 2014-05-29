@@ -32,11 +32,35 @@ function update_current_temp(data)
 {
     //window.alert(data.current_value);
     var gauge = Gauges.getById('uib-justgage-0');
-    var temp = parseInt(data.current_value);
+    var temp = parseInt(data.data);
     //window.alert(temp);
    gauge.refresh(temp); 
     
 }
+
+//function update_current_temp()
+//{
+//    var deviceID    = "55ff6b065075555327081787";
+//    var accessToken = "9b0f6e091223cacbadb656ed3f7f98c424eebe41";
+//    var getFunc = "boilertemp";
+//    var json_value = 4;
+//    
+//    var requestURL = "https://api.spark.io/v1/devices/" + deviceID + "/" + getFunc + "?access_token=" + accessToken;
+//    $.getJSON(requestURL, function(json) {
+//        json_value = parseInt(json.result);
+//        var gauge = Gauges.getById('uib-justgage-0');
+//        gauge.refresh(json_value); 
+//    });
+   // var temp = json_value;
+
+    
+    //window.alert(data.current_value);
+    //var gauge = Gauges.getById('uib-justgage-0');
+    //var temp = parseInt(data.current_value);
+    //window.alert(temp);
+   //gauge.refresh(temp); 
+    
+//}
 
 function update_boiler_state(data)
 {

@@ -46,7 +46,8 @@
 
 		<script src="http://d23cj0cdvyoxg0.cloudfront.net/xivelyjs-1.0.4.min.js"></script>
 		<script src="js/main.js"></script>
-		<script>
+		<!-- xively init 
+        <script>
 			xively.setKey("wgTSYj1e9fsmgkfbMmVNETghi2u7m7B7NYACQAcusBgLpBCl");
 			            xively.datastream.subscribe( "1196460529", "brewtemp", function ( event , datastream_updated ) {  
 			                update_brew_temp(datastream_updated);
@@ -66,10 +67,31 @@
                 //read boilerstate initially
                         xively.datastream.get( "1196460529", "boilerstate", function(data){update_boiler_state(data)});
 		</script>
-
+        -->
 		<script type="application/javascript" src="justgage/js/raphael.min.js"></script>
 		<script type="application/javascript" src="justgage/js/justgage.min.js"></script>
 		<script type="application/javascript" src="justgage/gauges.js"></script>
+        
+        <!-- SPARK CORE STUFF HERE -->
+        <script type="text/javascript">
+            //window.setInterval(function(){update_current_temp()}, 2000);
+            var deviceID = "55ff6b065075555327081787";
+            var accessToken = "9b0f6e091223cacbadb656ed3f7f98c424eebe41";
+            var eventSource = new EventSource("https://api.spark.io/v1/devices/" + deviceID + "/events/?access_token=" + accessToken);
+
+            eventSource.addEventListener('open', function(e) {
+            console.log("Opened!"); },false);
+
+            eventSource.addEventListener('error', function(e) {
+            console.log("Errored!"); },false);
+
+            eventSource.addEventListener('BoilerTempUpdate', function(e) {
+            var parsedData = JSON.parse(e.data);
+            update_current_temp(parsedData);
+            },false);
+
+        
+        </script>
 	</head>
 
 	<body id="afui">
