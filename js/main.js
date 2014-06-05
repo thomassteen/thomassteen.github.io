@@ -82,14 +82,20 @@ function update_boiler_state(data)
     
 function set_boiler_state()
 {
-    //window.alert("set boiler");
-    xively.setKey('wgTSYj1e9fsmgkfbMmVNETghi2u7m7B7NYACQAcusBgLpBCl');
+    var deviceID    = "55ff6b065075555327081787";
+    var accessToken = "9b0f6e091223cacbadb656ed3f7f98c424eebe41";
+    var setFunc = "setState";
+    
     var myswitch = document.getElementById("af-flipswitch-0");
     if (myswitch.checked){
-        xively.datastream.update ("1196460529", "boilerstate", {current_value: "1"}, callback ());
+        var requestURL = "https://api.spark.io/v1/devices/" +deviceID + "/" + setFunc + "/";
+        $.post( requestURL, { params: "on", access_token: accessToken });
+       
     }
     if (!myswitch.checked){
-        xively.datastream.update ("1196460529", "boilerstate", {current_value: "0"}, callback ());
+        var requestURL = "https://api.spark.io/v1/devices/" +deviceID + "/" + setFunc + "/";
+        $.post( requestURL, { params: "off", access_token: accessToken });
+    
     }
         
 }
