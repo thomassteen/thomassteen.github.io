@@ -17,35 +17,49 @@
     <script type="application/javascript" src="lib/jquery.min.js"></script>
     <script type="application/javascript" src="js/index_user_scripts.js"></script>
     <script type="application/javascript" src="https://cdn.pubnub.com/pubnub-dev.js"></script>
+    <script type="application/javascript" src="marginal/marginal-position.min.js"></script>
   </head>
 
   <body>
-    <div class="upage vertical-col left" id="mainpage">
-      <div id="uib_page_1" class="upage-content vertical-col left ">
-        <button class="btn widget uib_w_1 d-margins btn-default" data-uib="twitter%20bootstrap/button" data-ver="1">Button</button>
-        <div class="table-thing widget uib_w_3 d-margins" data-uib="twitter%20bootstrap/text_area" data-ver="1">
-          <label class="narrow-control label-inline">Comment</label>
-          <textarea rows="2" class="wide-control form-control" wrap="soft" placeholder="Placeholder" id="txtOutput"></textarea>
+    <div class="upage" id="mainpage">
+      <div class="upage-outer content-area vertical-col left">
+        <div id="uib_page_1" class="upage-content vertical-col left ">
+          <div class="widget uib_w_4 scale-image d-margins" data-uib="media/img" data-ver="0">
+            <figure class="figure-align">
+              <img src="images/neocortec_logo-1.jpg">
+
+              <figcaption data-position="bottom"></figcaption>
+            </figure>
+          </div>
+
+          <div class="table-thing widget uib_w_3 d-margins" data-uib="twitter%20bootstrap/text_area" data-ver="1">
+            <label class="narrow-control label-inline">Node ID</label>
+            <textarea rows="2" class="wide-control form-control" wrap="soft" placeholder="0001" id="neo_nodeID"></textarea>
+          </div>
+          <div class="table-thing widget uib_w_5 d-margins" data-uib="twitter%20bootstrap/input" data-ver="1">
+            <label class="narrow-control label-inline" for="neo_payload">Payload</label>
+            <input class="wide-control form-control default" type="text" placeholder="DEADBEAF" id="neo_payload">
+          </div>
+          <button class="btn widget uib_w_1 d-margins btn-default" data-uib="twitter%20bootstrap/button" data-ver="1">Send</button>
         </div>
       </div>
     </div>
-  <!-- View the Full Documentation. -->
-<!-- Include the PubNub Library -->
-<script src="https://cdn.pubnub.com/pubnub-dev.js"></script>
+    <!-- View the Full Documentation. -->
+    <!-- Include the PubNub Library -->
+    <script src="https://cdn.pubnub.com/pubnub-dev.js"></script>
 
-<!-- Instantiate PubNub -->
-<script type="text/javascript">
-
-    var PUBNUB_demo = PUBNUB.init({
-        publish_key: 'pub-c-03ca8d12-f094-4145-9fc5-f75f41b94286',
-        subscribe_key: 'sub-c-c1f8034e-caab-11e5-a316-0619f8945a4f'
-    });
-// Subscribe to the demo_tutorial channel
-PUBNUB_demo.subscribe({
-    channel: 'node-red-fromGW',
-    message: function(m){writeMsgToUi(m)}
-});
+    <!-- Instantiate PubNub -->
+    <script type="text/javascript">
+      var PUBNUB_demo = PUBNUB.init({
+          publish_key: 'pub-c-03ca8d12-f094-4145-9fc5-f75f41b94286',
+          subscribe_key: 'sub-c-c1f8034e-caab-11e5-a316-0619f8945a4f'
+      });
+  // Subscribe to the demo_tutorial channel
+  PUBNUB_demo.subscribe({
+      channel: 'node-red-fromGW',
+      message: function(m){writeMsgToUi(m)}
+  });
     </script>
-    </body>
+  </body>
 
 </html>

@@ -25,5 +25,6 @@
 // ...additional event handlers here...
 
 function writeMsgToUi(txt){
-    var person = prompt("Node with UID " + txt + " is trying to join\nPlease enter NodeID", "0010");   
+   //var person = prompt("Node with UID " + txt + " is trying to join\nPlease enter NodeID", "0010"); 
+    alert(txt);
 }

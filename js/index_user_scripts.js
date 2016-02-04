@@ -14,7 +14,7 @@
     {
        PUBNUB_demo.publish({
     channel: 'node-red-toGW',
-    message: {"nodeID": 1 , "payload": document.getElementById("txtOutput").value}
+    message: {"msgType": 3, "nodeID": parseInt(document.getElementById("neo_nodeID").value) , "payload": document.getElementById("neo_payload").value}
 }); 
     });
     
