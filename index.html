@@ -1,250 +1,51 @@
 <!DOCTYPE html>
-<!--HTML5 doctype-->
 <html>
-	<!-- content goes here-->
-	<!-- content goes here-->
-	<!-- content goes here-->
-	<!-- content goes here-->
-	<!-- content goes here-->
 
-	<head>
-		<script src="http://debug-software.intel.com/target/target-script-min.js#0tfx9swu1CWV132eyGjiOVFb6Yg3vCAZsaaly-X9f_0"></script>
-		<link rel="apple-touch-icon" href="Graphics/ios/Icon.png">
-		<link rel="apple-touch-icon" sizes="72x72" href="Graphics/ios/Icon-72.png">
-		<link rel="apple-touch-icon" sizes="114x114" href="Graphics/ios/Icon@2x.png">
-		<link rel="apple-touch-icon" sizes="144x144" href="Graphics/ios/Icon-72@2x.png">
+  <head>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
+    <link rel="stylesheet" type="text/css" href="app_framework/3.0/icons.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" type="text/css" href="app_framework/css/af.ui.min.css">
-		<link rel="stylesheet" type="text/css" href="app_framework/css/icons.min.css">
-		<meta charset="UTF-8">
-		<link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
-		<title>Silvia</title>
-		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
-		<style type="text/css">
-			/* Prevent copy paste for all elements except text fields */
-			*  { -webkit-user-select:none; -webkit-tap-highlight-color:rgba(255, 255, 255, 0); }
-			input, textarea  { -webkit-user-select:text; }
-		</style>
-		<script src="intelxdk.js"></script>
-		<script type="text/javascript">
-			/* This code is used to run as soon as Intel activates */
-			var onDeviceReady=function(){
-			//hide splash screen
-			intel.xdk.device.hideSplashScreen();
-			};
-			document.addEventListener("intel.xdk.device.ready",onDeviceReady,false);
-		</script>
-		<script type="application/javascript" src="app_framework/appframework.min.js"></script>
-		<script type="application/javascript" src="app_framework/appframework.ui.min.js"></script>
-		<script type="application/javascript" src="js/jquery.min.js"></script>
-		<script type="application/javascript" src="sidebar/js/jquery.event.move.js"></script>
-		<script type="application/javascript" src="sidebar/js/jquery.event.swipe.js"></script>
-		<script type="application/javascript" src="sidebar/js/sidebar.js"></script>
-		<script type="application/javascript" src="sidebar/js/swipe.js"></script>
-		<script type="application/javascript" src="js/index_user_scripts.js"></script>
+    <script src="intelxdk.js"></script>
+    <script src="cordova.js"></script>
+    <script src="xhr.js"></script>
+    <script src="xdk/init-dev.js"></script>
+    <script type="application/javascript" src="js/app.js"></script>
+    <script type="application/javascript" src="js/init-app.js"></script>
+    <script type="application/javascript" src="lib/jquery.min.js"></script>
+    <script type="application/javascript" src="js/index_user_scripts.js"></script>
+    <script type="application/javascript" src="https://cdn.pubnub.com/pubnub-dev.js"></script>
+  </head>
 
-		<script src="http://d23cj0cdvyoxg0.cloudfront.net/xivelyjs-1.0.4.min.js"></script>
-		<script src="js/main.js"></script>
-		<!-- xively init 
-        <script>
-			xively.setKey("wgTSYj1e9fsmgkfbMmVNETghi2u7m7B7NYACQAcusBgLpBCl");
-			            xively.datastream.subscribe( "1196460529", "brewtemp", function ( event , datastream_updated ) {  
-			                update_brew_temp(datastream_updated);
-			            });
-			            xively.datastream.subscribe( "1196460529", "steamtemp", function ( event , datastream_updated ) {  
-			                update_steam_temp(datastream_updated);
-			            });
-                        xively.datastream.subscribe( "1196460529", "currenttemp", function ( event , datastream_updated ) {  
-			                update_current_temp(datastream_updated);
-			            });
-                //read current temp initially
-                        xively.datastream.get( "1196460529", "currenttemp", function(data){update_current_temp(data)});
-            
-            xively.datastream.subscribe( "1196460529", "boilerstate", function ( event , datastream_updated ) {  
-			                update_boiler_state(datastream_updated);
-			            });
-                //read boilerstate initially
-                        xively.datastream.get( "1196460529", "boilerstate", function(data){update_boiler_state(data)});
-		</script>
-        -->
-		<script type="application/javascript" src="justgage/js/raphael.min.js"></script>
-		<script type="application/javascript" src="justgage/js/justgage.min.js"></script>
-		<script type="application/javascript" src="justgage/gauges.js"></script>
-        
-        <!-- SPARK CORE STUFF HERE -->
-        <script type="text/javascript">
-            //window.setInterval(function(){update_current_temp()}, 2000);
-            var deviceID = "55ff6b065075555327081787";
-            var accessToken = "9b0f6e091223cacbadb656ed3f7f98c424eebe41";
-            var eventSource = new EventSource("https://api.spark.io/v1/devices/" + deviceID + "/events/?access_token=" + accessToken);
+  <body>
+    <div class="upage vertical-col left" id="mainpage">
+      <div id="uib_page_1" class="upage-content vertical-col left ">
+        <button class="btn widget uib_w_1 d-margins btn-default" data-uib="twitter%20bootstrap/button" data-ver="1">Button</button>
+        <div class="table-thing widget uib_w_3 d-margins" data-uib="twitter%20bootstrap/text_area" data-ver="1">
+          <label class="narrow-control label-inline">Comment</label>
+          <textarea rows="2" class="wide-control form-control" wrap="soft" placeholder="Placeholder" id="txtOutput"></textarea>
+        </div>
+      </div>
+    </div>
+  <!-- View the Full Documentation. -->
+<!-- Include the PubNub Library -->
+<script src="https://cdn.pubnub.com/pubnub-dev.js"></script>
 
-            eventSource.addEventListener('open', function(e) {
-            console.log("Opened!"); },false);
+<!-- Instantiate PubNub -->
+<script type="text/javascript">
 
-            eventSource.addEventListener('error', function(e) {
-            console.log("Errored!"); },false);
-
-            eventSource.addEventListener('BoilerTempUpdate', function(e) {
-            var parsedData = JSON.parse(e.data);
-            update_current_temp(parsedData);
-            },false);
-
-        
-        </script>
-	</head>
-
-	<body id="afui">
-
-		<!-- content goes here-->
-		<div class="uwrap" id="content">
-			<div class="upage panel BackgroundColor backgroundstyle" id="mainpage" data-header="af-header-0" data-footer="none">
-				<div class="upage-outer">
-					<header class="container-group inner-element uib_w_10" data-uib="app_framework/header" data-ver="0" id="af-header-0">
-						<h1>Rancilio Silvia  Controller</h1>
-						<div class="widget-container wrapping-col single-centered"></div>
-						<div class="widget-container content-area horiz-area wrapping-col left"></div>
-						<div class="widget-container content-area horiz-area wrapping-col right"></div>
-					</header>
-					<div class="upage-content" id="mainsub">
-
-						<div class="grid grid-pad urow uib_row_8 row-height-8 bar-bg" data-uib="layout/row" data-ver="0">
-							<div class="col uib_col_23 col-0" data-uib="layout/col" data-ver="0">
-								<div class="widget-container content-area vertical-col center">
-									<div class="widget uib_w_12 scale-image d-margins" data-uib="media/img" data-ver="0">
-										<figure class="figure-align">
-											<img src="Graphics/silvia-large.jpg">
-											<figcaption data-position="bottom"></figcaption>
-										</figure>
-									</div><span class="uib_shim"></span>
-								</div>
-							</div>
-							<span class="uib_shim"></span>
-						</div>
-
-						<div class="grid grid-pad urow uib_row_12 row-height-12" data-uib="layout/row" data-ver="0">
-							<div class="col uib_col_30 col-0_6-12" data-uib="layout/col" data-ver="0">
-								<div class="widget-container content-area vertical-col">
-
-									<div class="table-thing with-label widget uib_w_23 d-margins togglewidth" data-uib="app_framework/flip_switch" data-ver="0">
-										<label class="narrow-control label-inline">Boiler On/Off</label>
-
-										<div class="wide-control">
-											<input type="checkbox" onclick="set_boiler_state()" class="toggle" id="af-flipswitch-0">
-											<label for="af-flipswitch-0" data-off="Off" data-on="On"><span></span>
-											</label>
-										</div>
-									</div><a class="button widget uib_w_17 d-margins icon tools" data-uib="app_framework/button" data-ver="0" id="btn_settings">Settings</a><span class="uib_shim"></span>
-								</div>
-							</div>
-							<div class="col uib_col_32 col-0_6-12" data-uib="layout/col" data-ver="0">
-								<div class="widget-container content-area vertical-col">
-
-									<a class="button widget uib_w_18 d-margins icon graph" data-uib="app_framework/button" data-ver="0" href="#uib_page_1" data-transition="slide">Temp plot</a>
-									<span class="uib_shim"></span>
-								</div>
-							</div>
-							<span class="uib_shim"></span>
-						</div>
-
-						<div class="grid grid-pad urow uib_row_13 row-height-13" data-uib="layout/row" data-ver="0">
-							<div class="col uib_col_33 col-0_12-12" data-uib="layout/col" data-ver="0">
-								<div class="widget-container content-area vertical-col">
-
-									<div class="uib-justgage gauge no_wrap widget uib_w_21" data-uib="widgets/justgage" data-ver="0" id="uib-justgage-0" data-gauge="{'title':'Current Temp','titleFontColor':'#000000','max':120,'hideMinMax':0,'hideValue':0,'humanFriendly':true,'symbol':' C','gaugeColor':'#797979','hideInnerShadow':1}"></div><span class="uib_shim"></span>
-								</div>
-							</div>
-							<span class="uib_shim"></span>
-						</div>
-					</div>
-					<!-- /upage-content -->
-
-					<div class="inner-element uib_w_2 uib_sidebar leftbar thumb-bg bar-gutter sidebar-bg" data-uib="layout/left_sidebar" data-ver="0" data-anim="{'style':'overlap', 'v':200, 'side':'left', 'oh':1}">
-						<div class="sidebar-content">
-
-							<div class="grid grid-pad urow uib_row_4 row-height-4" data-uib="layout/row" data-ver="0">
-								<div class="col uib_col_26 col-0_6-12" data-uib="layout/col" data-ver="0">
-									<div class="widget-container content-area vertical-col">
-										<span class="uib_shim"></span>
-									</div>
-								</div>
-								<div class="col uib_col_7 col-0_6-12" data-uib="layout/col" data-ver="0">
-									<div class="widget-container content-area vertical-col">
-										<span class="uib_shim"></span>
-									</div>
-								</div>
-								<span class="uib_shim"></span>
-							</div>
-
-							<div class="grid grid-pad urow uib_row_5 row-height-5" data-uib="layout/row" data-ver="0">
-								<div class="col uib_col_8 col-0_12-12" data-uib="layout/col" data-ver="0">
-									<div class="widget-container content-area vertical-col">
-
-										<div class="widget uib_w_3 d-margins Font" data-uib="media/text" data-ver="0">
-											<div class="widget-container left-receptacle"></div>
-											<div class="widget-container right-receptacle"></div>
-											<div>
-												<p>Boiler Temperature Settings:</p>
-											</div>
-										</div>
-										<div class="table-thing with-label widget uib_w_6 d-margins widthsettings" data-uib="app_framework/input" data-ver="0">
-											<label class="narrow-control label-inline" for="brew_temp">Brew temp:</label>
-
-											<input class="wide-control" type="number" value="98" id="brew_temp">
-										</div>
-										<div class="table-thing with-label widget uib_w_7 d-margins widthsettings" data-uib="app_framework/input" data-ver="0">
-											<label class="narrow-control label-inline" for="steam_temp">Steam temp:</label>
-
-											<input class="wide-control" type="number" value="110" id="steam_temp">
-										</div><a class="button widget uib_w_9 d-margins icon cloud gray" data-uib="app_framework/button" data-ver="0" id="btn_upload_to_silvia">Upload to Silvia</a><span class="uib_shim"></span>
-									</div>
-								</div>
-								<span class="uib_shim"></span>
-							</div>
-
-							<div class="grid grid-pad urow uib_row_6 row-height-6" data-uib="layout/row" data-ver="0">
-								<div class="col uib_col_9 col-0_12-12" data-uib="layout/col" data-ver="0">
-									<div class="widget-container content-area vertical-col">
-
-										<a class="button widget uib_w_5 d-margins icon check green" data-uib="app_framework/button" data-ver="0" id="btn_sidebar_ok">OK</a><span class="uib_shim"></span>
-									</div>
-								</div>
-								<span class="uib_shim"></span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- /upage-outer -->
-
-			</div>
-			<div class="upage panel backgroundstyle" id="uib_page_1" data-header="af-header-1" data-footer="none">
-				<div class="upage-outer">
-					<header class="container-group inner-element uib_w_16" data-uib="app_framework/header" data-ver="0" id="af-header-1">
-						<h1>Temp Graph</h1>
-						<div class="widget-container wrapping-col single-centered"></div>
-						<div class="widget-container content-area horiz-area wrapping-col left with-back"><a class="button" id="backButton">Back</a>
-						</div>
-						<div class="widget-container content-area horiz-area wrapping-col right"></div>
-					</header>
-					<div id="uib_page_1sub" class="upage-content ">
-
-						<div class="grid grid-pad urow uib_row_14 row-height-14" data-uib="layout/row" data-ver="0">
-							<div class="col uib_col_34 col-0_12-12" data-uib="layout/col" data-ver="0">
-								<div class="widget-container content-area vertical-col">
-
-									<span class="uib_shim "></span>
-								</div>
-							</div>
-							<span class="uib_shim "></span>
-						</div>
-					</div>
-				</div>
-				<!-- /upage-outer -->
-			</div>
-			<!-- /upage -->
-
-		</div>
-		<!-- /uwrap -->
-	</body>
+    var PUBNUB_demo = PUBNUB.init({
+        publish_key: 'pub-c-03ca8d12-f094-4145-9fc5-f75f41b94286',
+        subscribe_key: 'sub-c-c1f8034e-caab-11e5-a316-0619f8945a4f'
+    });
+// Subscribe to the demo_tutorial channel
+PUBNUB_demo.subscribe({
+    channel: 'node_red-fromGW',
+    message: function(m){console.log(m)}
+});
+</script>
+    </body>
 
 </html>
