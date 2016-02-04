@@ -43,7 +43,7 @@
 // Subscribe to the demo_tutorial channel
 PUBNUB_demo.subscribe({
     channel: 'node-red-fromGW',
-    message: function(m){alert(m)}
+    message: function(m){writeMsgToUi(m)}
 });
     </script>
     </body>
