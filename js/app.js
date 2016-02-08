@@ -24,7 +24,35 @@
 
 // ...additional event handlers here...
 
-function writeMsgToUi(txt){
-   //var person = prompt("Node with UID " + txt + " is trying to join\nPlease enter NodeID", "0010"); 
-    alert(txt);
+function handleMessage(message){
+    if (message.msgType == 82){
+        alert(message.text);    
+    }
+    if (message.msgType == 80){
+        alert(message.text);    
+    }
+    if (message.msgType == 81){
+        alert(message.text);    
+    }
+    if (message.msgType == 96){
+        alert(message.text);    
+    }
+    if (message.msgType == 97){
+        PUBNUB_demo.subscribe({
+            channel: 'node-red-fromGW'
+        });
+        
+        var nodeID = prompt(message.text);
+        if (nodeID!=="" && nodeID!==null){
+            PUBNUB_demo.publish({
+                channel: 'node-red-toGW',
+                message: {"msgType": 16, "nodeId": parseInt(nodeID, 10) , "uidHex":message.uidHex } 
+            });
+        
+        PUBNUB_demo.subscribe({
+            channel: 'node-red-fromGW',
+            message: handleMessage
+        });
+        } 
+    }
 }
